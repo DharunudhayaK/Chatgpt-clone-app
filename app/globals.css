@@ -5,11 +5,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Roboto", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
   }
 }
@@ -17,5 +19,98 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-secondary);
+}
+
+body.light-theme {
+  scrollbar-color: #bababa transparent;
+}
+
+body.dark-theme {
+  scrollbar-color: #555555 transparent;
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+/* styles/globals.css */
+.toast-success,
+.toast-error,
+.toast-info,
+.toast-warning {
+  font-size: 13px !important;
+  color: #fff !important;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+.toast-success {
+  background-color: #2e7d32 !important;
+  padding: 0px 12px !important;
+}
+
+.toast-error {
+  background-color: #d32f2f !important;
+  padding: 8px 12px !important;
+}
+
+.toast-info {
+  background-color: #0288d1 !important;
+}
+
+.toast-warning {
+  background-color: #ed6c02 !important;
+}
+
+/* Hide close icon */
+.Toastify__close-button {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s ease-out forwards;
 }
